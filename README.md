@@ -1,6 +1,6 @@
 # Тестове завдання "Clever"
 
-Web-версія знаходиться на GitHub Pages за [посиланням]()
+Web-версія знаходиться на GitHub Pages за [посиланням](https://dtrust.github.io/clever-test/)
 
 ## Стек
 
