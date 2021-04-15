@@ -1,0 +1,13 @@
+.header
+    width: 100%
+    min-height: calc(#{$base} * 10)
+    background-color: hsla(calc(var(--color-primary-h) + 1), var(--color-primary-s), calc(var(--color-primary-l) + 39%), 1)
+    box-shadow: 0px 2px 5px 0px hsla(0, 0%, 0%, 0.1)
+    transition: all 800ms ease-in
+    z-index: 1
+    &-scroll
+        position: fixed
+        top: 0
+        left: 0
+        min-height: calc(#{$base} * 8)
+        background-color: hsla(calc(var(--color-second-h) + 1), var(--color-second-s), calc(var(--color-second-l) + 39%), 1)

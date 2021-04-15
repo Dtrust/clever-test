@@ -1,0 +1,31 @@
+.stats
+    margin-top: calc(#{$base} * 9)
+    @include flex
+    flex-direction: column
+    &-list
+        margin-top: calc(#{$base} * 5)
+        width: 100%
+        @include flex
+        justify-content: space-around
+        flex-wrap: wrap
+    &-legend
+        font-size: calc(#{$base} * 2)
+        text-align: center
+        &:before
+            @extend .content-features__legend:before
+        &.customers
+            &:before
+                background-position: -5px -115px
+        &.writers-active
+            &:before
+                width: 170px
+                background-position: -344px -115px
+        &.average
+            &:before
+                background-position: -155px -5px
+        &.writers-online
+            &:before
+                width: 185px
+                background-position: -301px -225px
+        &__count
+            color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1)

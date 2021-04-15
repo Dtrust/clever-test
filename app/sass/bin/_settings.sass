@@ -1,0 +1,197 @@
+@import __colors-variables
+//----------------------------------------------------
+
+$-modal-box-shadow: 0 14px 37px rgba(33, 33, 33, .7)
+$-font-family: 'Roboto', sans-serif
+
+$-border-radius: 15px
+
+//----------------------------------------------------
+
+\:root, [data-theme="default"]
+    @include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont)
+    --color-main: 234
+    @include defineColorHSL(--color-primary, $primary-hue, $primary-saturation, $primary-lightness)
+    @include defineColorHSL(--color-second, $second-hue, $second-saturation, $second-lightness)
+    @include defineColorHSL(--color-dark, $dark-hue, $dark-saturation, $dark-lightness)
+    @include defineColorHSL(--color-light, $light-hue, $light-saturation, $light-lightness)
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    &::before,
+    &::after
+        box-sizing: border-box
+    &::selection
+        background: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), .8)
+
+html
+    position: relative
+    scrollbar-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1) transparent
+    scrollbar-width: thin
+
+body
+    position: relative
+    font-family: $-font-family
+    font-size: $p
+    color: hsla(var(--color-light-h), var(--color-light-s), var(--color-light-l), 1)
+    background: hsla(var(--color-primary-h), calc(var(--color-primary-s) + 100%), calc(var(--color-primary-l) + 60%), 1)
+    line-height: 1.2
+    &::-webkit-scrollbar
+        width: 6px
+    &::-webkit-scrollbar-track
+        -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, .2) inset
+        background-color: transparent
+    &::-webkit-scrollbar-thumb
+        border-radius: 5px
+        background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1)
+
+.container
+    width: 100%
+    max-width: 1180px
+    margin: 0 auto
+    padding: 0 1em
+
+.main
+    margin-top: calc(#{$base} * 3)
+    &-wrap
+        margin-top: calc(#{$base} * 5)
+        display: flex
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden
+    position: absolute
+    width: 1px
+    height: 1px
+    margin: -1px
+    border: 0
+    padding: 0
+    white-space: nowrap
+    clip-path: inset(100%)
+    clip: rect(0 0 0 0)
+    overflow: hidden
+
+
+.title
+    font-size: $title
+    text-transform: uppercase
+    color: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+
+button
+    padding: calc(#{$base} * 1.8) calc(#{$base} * 8)
+    font-size: calc(#{$base} * 1.8)
+    text-transform: uppercase
+    color: hsla(0, 100%, 100%, 1)
+    background: hsla(37, 100%, 59%, 1)
+    border: 0
+    border-radius: 25px
+    cursor: pointer
+    box-shadow: 0 14px 17px -5px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), .6)
+    transition: all 265ms ease-in
+    &:hover
+        background: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+        box-shadow: none
+    &:active
+        background: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+        box-shadow: none
+
+a
+    font-size: $p
+    text-decoration: none
+    color: hsla(var(--color-second-h), calc(var(--color-second-s) - 4%), calc(var(--color-second-l) - 22%), 1)
+    transition: all 265ms ease-in
+    &:hover
+        color: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+        & span
+            color: hsla(var(--color-second-h), calc(var(--color-second-s) - 19%), calc(var(--color-second-l) - 32%), 1)
+            transition: all 265ms ease-in
+    &:active
+        color: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+    &:visited
+        color: hsla(var(--color-dark-h), var(--color-dark-s), calc(var(--color-dark-l) + 30%), 1)
+
+button, a, input, textarea
+    &:focus
+        outline: 0
+        box-shadow: 0 0 0 2px hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+
+img
+    width: 100%
+    height: auto
+    display: block
+    object-fit: cover
+
+form
+    padding: 0 .5em 0 .5em
+    & fieldset
+        display: flex
+        flex-direction: column
+        & legend
+            text-align: center
+        & p
+            margin-top: .5em
+        & button
+            margin-top: .5em
+            padding: .3em .8em
+
+input, textarea
+    padding: $base calc(#{$base} * 2)
+    font-size: $p
+    border: 1px solid hsla(0, 0%, 87%, 1)
+    border-radius: 15px
+
+input::-webkit-input-placeholder , textarea::-webkit-input-placeholder
+    @include placeholdersFont
+input::-moz-placeholder, textarea::-moz-placeholder
+    @include placeholdersFont
+input:-moz-placeholder, textarea:-moz-placeholder
+    @include placeholdersFont
+input:-ms-input-placeholder, textarea:-ms-input-placeholder
+    @include placeholdersFont
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder
+    @include placeholdersFontTranparent
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder
+    @include placeholdersFontTranparent
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder
+    @include placeholdersFontTranparent
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder
+    @include placeholdersFontTranparent
+
+.noscroll
+    overflow: hidden
+
+
+.active
+    &.widget
+        display: block
+        transform: translateX(0%)
+        &-nav
+            &__list
+                transform: translateX(0%)
+            &__item
+                transform: translateX(0)
+    &.control-btn
+        right: 80%
+        transform: rotate(45deg)
+
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    backdrop-filter: blur(3px)
+    transition: all 800ms
+    visibility: hidden
+
+.hidden
+    display: none
+    animation: fadeOut .5s
+    animation-fill-mode: forwards
+
+.show
+    visibility: visible!important

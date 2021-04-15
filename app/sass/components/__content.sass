@@ -1,0 +1,167 @@
+@import ../bin/custom-select
+
+.content
+    width: 66%
+    &-desc
+        margin-top: calc(#{$base} * 3)
+    &-features
+        margin-top: calc(#{$base} * 3)
+        @include flex
+        justify-content: space-around
+        &__item
+            @include flex
+            flex-direction: column
+            width: 33.3%
+        &__legend
+            font-weight: bold
+            text-align: center
+            color: hsla(calc(var(--color-primary-h) - 5), calc(var(--color-primary-s) - 54%), calc(var(--color-primary-l) - 35%), .8)
+            &:before
+                content: ''
+                margin-bottom: calc(#{$base} * 1.4)
+                display: block
+                width: 140px
+                height: 100px
+                background-image: url('../assets/img/icons-sprite.png')
+            &.time
+                &:before
+                    background-position: -353px -5px
+            &.academic
+                &:before
+                    background-position: -5px -5px
+            &.pages
+                &:before
+                    background-position: -149px -201px
+
+.form
+    margin-top: calc(#{$base} * 5)
+    &-legend
+        min-width: 5rem
+        color: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+    &-field
+        width: 62%
+    &-currency
+        @include flex
+        &__slider
+            @include flex
+            justify-content: space-between
+            background: hsla(var(--color-light-h), var(--color-light-s), calc(var(--color-light-l) + 58%), 1)
+            border: 1px solid hsla(var(--color-light-h), var(--color-light-s), calc(var(--color-light-l) + 47%), 1)
+            border-radius: $-border-radius
+        &__item
+            padding: $base calc(#{$base} * 2)
+            font-size: $p
+            text-transform: uppercase
+            cursor: pointer
+            &:hover
+                cursor: pointer
+    &-services,
+    &-level
+        margin-top: calc(#{$base} * 2)
+        @include flex
+    &-table
+        margin-top: calc(#{$base} * 5)
+        @include flex
+        flex-direction: column
+        padding: $base
+        border-radius: 0 0 6px 6px
+        box-shadow: 0px 2px 5px 0px hsla(0, 0%, 0%, 0.1)
+        &__wrap
+            @include flex
+            align-items: stretch
+            width: 100%
+        &__aside
+            margin-right: .5em
+            @include flex
+            flex: 0
+            padding: .3em
+            &-title
+                white-space: nowrap
+                writing-mode: vertical-rl
+                transform: rotate(180deg)
+            &.popular
+                background-color: hsla(calc(var(--color-second-h) + 8), calc(var(--color-second-s) - 8%), calc(var(--color-second-l) + 48%), 1)
+                border-radius: 6px 6px 0 0
+                & > p
+                    color: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+            &.other
+                background-color: hsla(calc(var(--color-primary-h) - 6), calc(var(--color-primary-s) - 16%), calc(var(--color-primary-l) + 36%), 1)
+                border-radius: 0 0 6px 6px
+                & > p
+                    color: hsla(calc(var(--color-primary-h) - 6), calc(var(--color-primary-s) - 15%), calc(var(--color-primary-l) - 6%), 1)
+        &__content
+            flex: 1
+        &__row
+            @include flex
+            justify-content: space-between
+            width: 100%
+            min-height: calc(#{$base} * 4.8)
+            padding: 0 calc(.34722rem * 2) 0
+            &:nth-child(even)
+                background-color: hsla(180, 8%, 97%, 1)
+                border-radius: 10px
+    &-total
+        margin-top: 1em
+        @include flex
+        justify-content: space-between
+        &__wrap
+            @include flex
+        &__title,
+        &__sum
+            font-weight: bold
+            color: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+        &__title
+            margin-right: calc(#{$base} * 2)
+            font-size: calc(#{$base} * 1.6)
+        &__sum
+            font-size: calc(#{$base} * 2.4)
+
+
+.currency
+    &--active
+        background: hsla(var(--color-primary-h), calc(var(--color-primary-s) + 100%), calc(var(--color-primary-l) + 60%), 1)
+        border-radius: $-border-radius
+        border: 1px solid hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1)
+
+
+.table
+    &-legend
+        color: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+        &__title
+            width: 8rem
+        &__key
+            flex: 1
+            min-width: 2rem
+            text-align: center
+
+.row
+    &-title
+        width: 8rem
+        padding: calc(#{$base} * 2) 0
+    &-value
+        align-self: stretch
+        flex: 1
+        @include flex
+        justify-content: center
+        min-width: 2rem
+        cursor: pointer
+        &:hover
+            color: hsla(calc(var(--color-primary-h) - 6), calc(var(--color-primary-s) - 15%), calc(var(--color-primary-l) - 6%), 1)
+            background-color: hsla(calc(var(--color-primary-h) - 6), calc(var(--color-primary-s) - 16%), calc(var(--color-primary-l) + 36%), 1)
+            border-radius: 10px
+        &:active
+            color: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+            background-color: hsla(calc(var(--color-second-h) + 8), calc(var(--color-second-s) - 8%), calc(var(--color-second-l) + 48%), 1)
+            border-radius: 10px
+        &.value--active
+            &:hover
+                color: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+                background-color: hsla(calc(var(--color-second-h) + 8), calc(var(--color-second-s) - 8%), calc(var(--color-second-l) + 48%), 1)
+                border-radius: 10px
+
+.value
+    &--active
+        color: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+        background-color: hsla(calc(var(--color-second-h) + 8), calc(var(--color-second-s) - 8%), calc(var(--color-second-l) + 48%), 1)
+        border-radius: 10px
+

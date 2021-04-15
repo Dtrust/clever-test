@@ -1,0 +1,20 @@
+section.control
+	button.control-btn(name='mobile-menu')
+		svg.control-btn__icon(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 512 512' width='50' height='50')
+			path(d='M241,512V451.67h-7.58a60.17,60.17,0,1,1,0-120.34H241V271H165.67a15,15,0,0,1-15-15V233.42a30.17,30.17,0,1,0-60.34,0V256a15,15,0,0,1-15,15H0V481.83A30.2,30.2,0,0,0,30.17,512Z')
+			path(d='M481.83,512A30.2,30.2,0,0,0,512,481.83V271H451.67v7.58a60.17,60.17,0,0,1-120.34,0V271H271v75.33a15,15,0,0,1-15,15H233.42a30.17,30.17,0,1,0,0,60.34H256a15,15,0,0,1,15,15V512Z')
+			path(d='M391.5,308.75a30.21,30.21,0,0,0,30.17-30.17V256a15,15,0,0,1,15-15H512V30.17A30.2,30.2,0,0,0,481.83,0H271V60.33h7.58a60.17,60.17,0,1,1,0,120.34H271V241h75.33a15,15,0,0,1,15,15v22.58A30.21,30.21,0,0,0,391.5,308.75Z')
+			path(d='M30.17,0A30.2,30.2,0,0,0,0,30.17V241H60.33v-7.58a60.17,60.17,0,1,1,120.34,0V241H241V165.67a15,15,0,0,1,15-15h22.58a30.17,30.17,0,1,0,0-60.34H256a15,15,0,0,1-15-15V0Z')
+		span.visually-hidden Open features
+
+section#overlay.overlay
+
+section#modal.modal
+	h3.visually-hidden Modal Window
+	.modal-content
+		p.title.modal-title Please select services before continue...
+		p.title.modal-desc You order was
+		p.title.modal-text
+			span.modal-desc__currency $
+			span.modal-desc__count 0
+		button#submit-close.modal-btn(name='close modal') Ok

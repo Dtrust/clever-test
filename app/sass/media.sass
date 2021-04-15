@@ -1,0 +1,61 @@
+@media screen and (max-width: 900px)
+  .widget
+    transform: translateX(200%)
+    transition: all 800ms cubic-bezier(0.8, 0, 0.33, 1)
+    width: 75%
+    position: fixed
+    top: 2%
+    right: 2%
+    height: 100vh
+    overflow-y: auto
+    z-index: 1
+    &-img
+      display: none
+    &-item
+      background: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+
+  .control
+    &-btn
+      position: fixed
+      top: 50%
+      right: 0
+      display: block
+      background: transparent
+      padding: 0
+      box-shadow: none
+      z-index: 2
+      transition: all 800ms cubic-bezier(0.8, 0, 0.33, 1)
+      &:hover
+        background: transparent
+        box-shadow: none
+      &:active
+        background: transparent
+        box-shadow: none
+      &__icon
+        & path
+          fill: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1)
+
+  .content
+    width: 100%
+
+  .form
+    &-field
+      width: 80%
+    &-total
+      flex-direction: column
+      &__wrap
+        margin-bottom: calc(#{$base} * 2)
+
+@media screen and (max-width: 660px)
+  .stats
+    &-item
+      @include flex
+      justify-content: space-around
+      width: 50%
+
+@media screen and (max-width: 575px)
+  .content
+    &-features
+      &__legend
+        &:before
+          transform: scale(.7)

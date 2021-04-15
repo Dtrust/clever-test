@@ -1,0 +1,21 @@
+block variables
+
+doctype html
+html(lang= lang)
+	head
+		block head
+		include ../components/head
+	body
+		include ../components/header
+		main.container.main
+			include ../components/_breadcrumbs
+			.main-wrap
+				section.content
+					block content
+				aside.widget
+					block widget
+			block main
+		include ../components/footer
+		block controls
+		script(src="/js/script.bundle.js")
+		block script

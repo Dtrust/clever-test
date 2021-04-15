@@ -1,0 +1,21 @@
+.footer
+    margin-top: calc(#{$base} * 11.4)
+    position: relative
+    min-height: calc(#{$base} * 41)
+    background-color: hsla(166, 52%, 21%, 1)
+    &:before,
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        width: 90px
+        height: 75px
+        background: url('../assets/img/icons-sprite.png')
+    &:before
+        top: -15%
+        left: 4%
+        background-position: -149px -115px
+    &:after
+        bottom: 0
+        right: 4%
+        background-position: -247px -115px
