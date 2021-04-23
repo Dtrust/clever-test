@@ -14,15 +14,15 @@ form.price-form.form
 	.form-currency
 		p.form-legend.form-currency__legend Select currency
 		.form-field.form-currency__slider
-			.form-currency__item.currency--active(data-currency='usd') Usd
+			button.form-currency__item.currency--active(data-currency='usd') Usd
 				input.form-currency__field.visually-hidden(type='radio' name='usd' id='usd' checked='true')
-			.form-currency__item(data-currency='eur') Eur
+			button.form-currency__item(data-currency='eur') Eur
 				input.form-currency__field.visually-hidden(type='radio' name='eur' id='eur')
-			.form-currency__item(data-currency='cad') Cad
+			button.form-currency__item(data-currency='cad') Cad
 				input.form-currency__field.visually-hidden(type='radio' name='cad' id='cad')
-			.form-currency__item(data-currency='gbr') Gbr
+			button.form-currency__item(data-currency='gbr') Gbr
 				input.form-currency__field.visually-hidden(type='radio' name='gbr' id='gbr')
-			.form-currency__item(data-currency='aud') Aud
+			button.form-currency__item(data-currency='aud') Aud
 				input.form-currency__field.visually-hidden(type='radio' name='aud' id='aud')
 	.form-services
 		p.form-legend.form-services__legend Type of services
@@ -86,4 +86,4 @@ form.price-form.form
 				span.form-total__mark $
 				span.form-total__pay 0.00
 				input.form-total__field.visually-hidden(id='total' name='total' type='text')
-		button#btn-buy.form-total__btn(type='submit') Proceed to order
+		button#btn-buy.btn.form-total__btn(type='submit') Proceed to order

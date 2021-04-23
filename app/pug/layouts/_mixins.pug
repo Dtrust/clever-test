@@ -2,19 +2,19 @@
 mixin setServicesItems(serviceName, currency, value5d, value3d, value48h, value24h)
 	.form-table__row.row
 		p.row-title= serviceName
-		.row-value.value
+		button.row-value.value
 			input.value-input.visually-hidden(type='checkbox' name= (serviceName + '-5d') value= value5d)
 			span.value-mark= currency
 			span.value-count= value5d
-		.row-value.value
+		button.row-value.value
 			input.value-input.visually-hidden(type='checkbox' name= (serviceName + '-3d') value= value3d)
 			span.value-mark= currency
 			span.value-count= value3d
-		.row-value.value
+		button.row-value.value
 			input.value-input.visually-hidden(type='checkbox' name= (serviceName + '-48h') value= value48h)
 			span.value-mark= currency
 			span.value-count= value48h
-		.row-value.value
+		button.row-value.value
 			input.value-input.visually-hidden(type='checkbox' name= (serviceName + '-24h') value= value24h)
 			span.value-mark= currency
 			span.value-count= value24h

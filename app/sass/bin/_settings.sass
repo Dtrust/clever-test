@@ -80,22 +80,27 @@ input[type="radio"].visually-hidden
     color: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
 
 button
-    padding: calc(#{$base} * 1.8) calc(#{$base} * 8)
-    font-size: calc(#{$base} * 1.8)
-    text-transform: uppercase
-    color: hsla(0, 100%, 100%, 1)
-    background: hsla(37, 100%, 59%, 1)
+    background: transparent
     border: 0
-    border-radius: 25px
-    cursor: pointer
-    box-shadow: 0 14px 17px -5px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), .6)
-    transition: all 265ms ease-in
-    &:hover
-        background: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
-        box-shadow: none
-    &:active
-        background: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
-        box-shadow: none
+    font: inherit
+    color: inherit
+    &.btn
+        padding: calc(#{$base} * 1.8) calc(#{$base} * 8)
+        font-size: calc(#{$base} * 1.8)
+        text-transform: uppercase
+        color: hsla(0, 100%, 100%, 1)
+        background: hsla(37, 100%, 59%, 1)
+        border: 0
+        border-radius: 25px
+        cursor: pointer
+        box-shadow: 0 14px 17px -5px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), .6)
+        transition: all 265ms ease-in
+        &:hover
+            background: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+            box-shadow: none
+        &:active
+            background: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+            box-shadow: none
 
 a
     font-size: $p
@@ -115,7 +120,8 @@ a
 button, a, input, textarea
     &:focus
         outline: 0
-        box-shadow: 0 0 0 2px hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+        box-shadow: 0 0 0 2px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1)
+        border-radius: inherit
 
 img
     width: 100%

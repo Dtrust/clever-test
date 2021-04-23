@@ -134,7 +134,10 @@ export const services = {
         }
 
         rowValues.forEach(rowValue => {
-            rowValue.addEventListener('click', () => handler(rowValue));
+            rowValue.addEventListener('click', (e) => {
+                e.preventDefault()
+                handler(rowValue)
+            });
         })
     },
 
@@ -150,7 +153,8 @@ export const services = {
 
         for (let i = 0; i < currencyButtons.length; i++) {
 
-            currencyButtons[i].addEventListener("click", () => {
+            currencyButtons[i].addEventListener("click", (e) => {
+                e.preventDefault();
                 const current = document.querySelectorAll('.currency--active');
 
                 current[0].className = current[0].className.replace('currency--active', '');

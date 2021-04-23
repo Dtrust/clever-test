@@ -97,9 +97,9 @@
             width: 100%
             min-height: calc(#{$base} * 4.8)
             padding: 0 calc(.34722rem * 2) 0
+            border-radius: 10px
             &:nth-child(even)
                 background-color: hsla(180, 8%, 97%, 1)
-                border-radius: 10px
     &-total
         margin-top: 1em
         @include flex
@@ -145,7 +145,8 @@
         justify-content: center
         min-width: 2rem
         cursor: pointer
-        &:hover
+        &:hover,
+        &:focus
             color: hsla(calc(var(--color-primary-h) - 6), calc(var(--color-primary-s) - 15%), calc(var(--color-primary-l) - 6%), 1)
             background-color: hsla(calc(var(--color-primary-h) - 6), calc(var(--color-primary-s) - 16%), calc(var(--color-primary-l) + 36%), 1)
             border-radius: 10px
