@@ -2,7 +2,7 @@
 
 module.exports = {
     //'development' 'production'
-    mode: 'production',
+    mode: 'development',
     entry: {
         main: ['@babel/polyfill', './app/js/main.js']
     },

@@ -12,7 +12,9 @@
     &-img
       display: none
     &-item
-      background: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), 1)
+      background: hsla(calc(var(--color-primary-h) + 1), var(--color-primary-s), calc(var(--color-primary-l) + 39%), 1)
+      border: 1px solid #dcdee2
+      box-shadow: 0 2px 2px rgba(33, 33, 33, .7)
 
   .control
     &-btn
@@ -59,3 +61,8 @@
       &__legend
         &:before
           transform: scale(.7)
+
+  .form
+    &-table
+      &__aside
+        display: none

@@ -1,3 +1,5 @@
+include ../layouts/_mixins
+
 h1.title.content-title Prices
 p.content-desc The following information s considered when charging the order:
 ul.content-features
@@ -13,24 +15,34 @@ form.price-form.form
 		p.form-legend.form-currency__legend Select currency
 		.form-field.form-currency__slider
 			.form-currency__item.currency--active(data-currency='usd') Usd
-				input.visually-hidden(type='radio' name='usd' id='usd')
+				input.form-currency__field.visually-hidden(type='radio' name='usd' id='usd' checked='true')
 			.form-currency__item(data-currency='eur') Eur
-				input.visually-hidden(type='radio' name='eur' id='eur')
+				input.form-currency__field.visually-hidden(type='radio' name='eur' id='eur')
 			.form-currency__item(data-currency='cad') Cad
-				input.visually-hidden(type='radio' name='cad' id='cad')
+				input.form-currency__field.visually-hidden(type='radio' name='cad' id='cad')
 			.form-currency__item(data-currency='gbr') Gbr
-				input.visually-hidden(type='radio' name='gbr' id='gbr')
+				input.form-currency__field.visually-hidden(type='radio' name='gbr' id='gbr')
 			.form-currency__item(data-currency='aud') Aud
-				input.visually-hidden(type='radio' name='aud' id='aud')
+				input.form-currency__field.visually-hidden(type='radio' name='aud' id='aud')
 	.form-services
 		p.form-legend.form-services__legend Type of services
-		input.form-field.form-services__field(type='text' placeholder='Type of services' value='Resume/CV services')
+		input.form-field.form-services__field(type='text' name='Type-of-services' placeholder='Type of services' value='Resume/CV services')
 	.form-level
 		p.form-legend.form-level__title Type level
 		.form-field.form-level__field
-			select#level-select
+			select#level-select(name='type-level' required='true')
+				-
+					let options =[
+						{name: 'Entry'},
+						{name: 'Some option1'},
+						{name: 'Some option2'},
+						{name: 'Some option3'},
+					]
+				each option in options
+					option(value= option.name)= option.name
 
 	.form-table
+
 		.form-table__wrap
 			.form-table__aside.popular
 				p.form-table__aside-title Most popular
@@ -41,304 +53,37 @@ form.price-form.form
 					p.table-legend__key 3 days
 					p.table-legend__key 48 hours
 					p.table-legend__key 24 hours
-				.form-table__row.row
-					p.row-title Resume writing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title Resume editing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title CV writing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title CV editing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title Cover letter writing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='12')
-						span.value-mark $
-						span.value-count 12
-				.form-table__row.row
-					p.row-title LinkedIn® Pro Bio
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title Resume design services
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title Resume/CV review
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title Basic Package: Resume + CV writing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title Resume Package: Resume + Cover letter writing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='12')
-						span.value-mark $
-						span.value-count 12
-				.form-table__row.row
-					p.row-title CV Package: CV + cover letter writing
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
+
+				+setServicesItems('Resume writing', '$', '35.5', '48.2', '54', '67.7')
+				+setServicesItems('Resume editing', '$', '43', '48', '68', '75')
+				+setServicesItems('CV writing', '$', '20', '20', '20', '20')
+				+setServicesItems('CV editing', '$', '20', '20', '20', '20')
+				+setServicesItems('Cover letter writing', '$', '20', '20', '20', '12')
+				+setServicesItems('LinkedIn® Pro Bio', '$', '20', '20', '20', '20')
+				+setServicesItems('Resume design services', '$', '20', '20', '20', '20')
+				+setServicesItems('Resume/CV review', '$', '20', '20', '20', '20')
+				+setServicesItems('Basic Package: Resume + CV writing', '$', '20', '20', '20', '20')
+				+setServicesItems('Resume Package: Resume + Cover letter writing', '$', '20', '20', '20', '12')
+				+setServicesItems('CV Package: CV + cover letter writing', '$', '20', '30', '40', '50')
+
 		.form-table__wrap
 			.form-table__aside.other
 				p.form-table__aside-title Other
 			.form-table__content
-				.form-table__row.row
-					p.row-title List of International Recruiting Agencies
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title List of 10 Top Job Sites
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title List of 10 Top Job Sites
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title List of 10 Top Job Sites
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-				.form-table__row.row
-					p.row-title List of 10 Top Job Sites
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
-					.row-value.value
-						input.visually-hidden(type='radio' name='value' value='125.55')
-						span.value-mark $
-						span.value-count 125.55
+				+setServicesItems('New! E-Cover Letter Writing', '$', '125.55', '125.55', '125.55', '12')
+				+setServicesItems('Online Resume Storage', '$', '125.55', '125.55', '125.55', '125.55')
+				+setServicesItems('Resume Distribution to Employment Agencies', '$', '125.55', '125.55', '125.55', '125.55')
+				+setServicesItems('Thank You & Follow-up Letters', '$', '125.55', '125.55', '125.55', '125.55')
+				+setServicesItems('KSAs - Knowledge, Skills, Abilities', '$', '125.55', '125.55', '125.55', '125.55')
+				+setServicesItems('Interview Tips', '$', '125.55', '125.55', '125.55', '12')
+				+setServicesItems('List of International Recruiting Agencies', '$', '125.55', '125.55', '125.55', '125.55')
+				+setServicesItems('List of 10 Top Job Sites', '$', '125.55', '125.55', '125.55', '125.55')
 
 	.form-total
 		.form-total__wrap
 			p.form-total__title Total price:
 			p.form-total__sum
 				span.form-total__mark $
-				span.form-total__pay 0
-				input.form-total__field.visually-hidden(id='total' name='total' type='text' value)
+				span.form-total__pay 0.00
+				input.form-total__field.visually-hidden(id='total' name='total' type='text')
 		button#btn-buy.form-total__btn(type='submit') Proceed to order

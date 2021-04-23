@@ -1,8 +1,7 @@
 import customSelect from './modules/customSelect';
 import mobileMenu from './modules/mobileMenu';
-import setServices from './modules/setServices';
-import exchangeCurrency from './modules/currencyExchange';
-import {changeHeaderByScroll} from './modules/changeHeaderByScroll';
+import { initChangeCurrency, initTableHandler } from './modules/setServices';
+import { changeHeaderByScroll } from './modules/changeHeaderByScroll';
 import {modal} from './modules/modal';
 import outputConsoleName from './modules/outputConsoleName';
 
@@ -13,11 +12,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     customSelect('#level-select');
 
+    initTableHandler('.row');
+
+    initChangeCurrency('.form-currency__item')
+
     mobileMenu('.control-btn', '.widget');
-
-    exchangeCurrency();
-
-    setServices();
 
     modal('modal')
 
